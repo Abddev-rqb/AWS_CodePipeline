@@ -19,5 +19,5 @@ phases:
       - echo "Post-build phase started"
       - echo "Build completed successfully"
 artifacts:
-  base-directory: dist/AWS_codepipeline
+  base-directory: dist/my-angular-project
   files: '**/*'
