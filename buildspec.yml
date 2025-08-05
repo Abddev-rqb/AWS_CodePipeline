@@ -12,8 +12,11 @@ phases:
       - npm install
   build:
     commands:
-      - echo "Build phase started"
+      - echo "Build error simulation"
+      - exit 1
       - ng build --configuration production
+    finally:
+      - echo "Build phase completed"
   post_build:
     commands:
       - echo "Post-build phase started"
