@@ -17,7 +17,7 @@ phases:
       - echo "Build phase completed"
   post_build:
     commands:
-      - echo "Post-build phase started"
+      - echo "Post-build started"
       - echo "Build completed successfully"
 artifacts:
   base-directory: dist/my-angular-project
