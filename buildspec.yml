@@ -21,6 +21,6 @@ phases:
       - echo "Build completed successfully"
 artifacts:
   files:
-    - dist/my-angular-project/**
+    - 'dist/my-angular-project/**'
     - appspec.yml
-    - deploy-scripts/**/*
+    - 'deploy-scripts/**/*'
