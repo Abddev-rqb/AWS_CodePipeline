@@ -5,14 +5,21 @@ files:
     destination: /var/www/my-angular-project
 permissions:
   - object: /var/www/my-angular-project
-    pattern: '**'
+    pattern: "**"
     owner: root
     group: root
-    mode: '0755'
+    mode: "0755"
     type:
-      - file
       - directory
+      - file
 hooks:
   ApplicationStart:
     - location: deploy-scripts/application-start-hook.sh
+      timeout: 300
+      logtail: /var/log/deploy.log
+  BeforeInstall:
+    - location: deploy-scripts/before-install.sh
+      timeout: 300
+  AfterInstall:
+    - location: deploy-scripts/after-install.sh
       timeout: 300
