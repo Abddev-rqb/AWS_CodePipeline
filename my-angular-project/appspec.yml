@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: dist/my-angular-project
+  - source: /
     destination: /var/www/my-angular-project
 permissions:
   - object: /var/www/my-angular-project
@@ -13,6 +13,9 @@ permissions:
       - file
       - directory
 hooks:
+  BeforeInstall:
+    - location: deploy-scripts/before-install.sh
+      timeout: 300
   ApplicationStart:
-    - location: deploy-scripts/application-start-hook.sh
+    - location: deploy-scripts/application-start.sh
       timeout: 300
