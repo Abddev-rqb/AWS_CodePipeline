@@ -14,8 +14,8 @@ permissions:
       - directory
 hooks:
   BeforeInstall:
-    - location: my-angular-project/deploy-scripts/before-install.sh
+    - location: deploy-scripts/before-install.sh
       timeout: 300
   ApplicationStart:
-    - location: my-angular-project/deploy-scripts/application-start.sh
+    - location: deploy-scripts/application-start.sh
       timeout: 300
