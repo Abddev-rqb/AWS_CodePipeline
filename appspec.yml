@@ -1,17 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: my-angular-project/  # 👈 Now matches the new structure
+  - source: my-angular-project/  
     destination: /var/www/my-angular-project
 permissions:
   - object: /var/www/my-angular-project
-    owner: nginx  # 👈 Changed from root
-    group: nginx  # 👈 Changed from root
+    owner: nginx  
+    group: nginx  
     mode: '0755'
 hooks:
   BeforeInstall:
     - location: deploy-scripts/before-install.sh
       timeout: 300
   ApplicationStart:
-    - location: deploy-scripts/application-start.sh  # 👈 Fixed typo in filename
+    - location: deploy-scripts/application-start-hook.sh
       timeout: 300

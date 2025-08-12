@@ -9,12 +9,11 @@ phases:
   build:
     commands:
       - ng build --configuration production
-      # Debugging command:
       - find dist -type f | xargs ls -la
 artifacts:
-  base-directory: dist  # 👈 Changed from dist/my-angular-project
+  base-directory: dist  
   files:
-    - 'my-angular-project/**/*'  # 👈 Now relative to dist
+    - 'my-angular-project/**/*' 
     - appspec.yml
     - 'deploy-scripts/**/*'
   discard-paths: no
