@@ -17,7 +17,7 @@ phases:
       - ng build --configuration production
       - ls -l dist/my-angular-project  
 artifacts:
-  base-directory: dist/my-angular-project
+  base-directory: dist/my-angular-project/
   files:
     - '**/*'
   discard-paths: no
