@@ -15,13 +15,11 @@ phases:
     commands:
       - echo "Building Angular project..."
       - ng build --configuration production
-      - ls -lR dist/my-angular-project  
+      - ls -l dist/my-angular-project  
 artifacts:
-  base-directory: dist 
+  base-directory: dist/my-angular-project
   files:
-    - 'my-angular-project/**/*'  
-    - appspec.yml
-    - 'deploy-scripts/**/*'
+    - '**/*'
   discard-paths: no
 cache:
   paths:
