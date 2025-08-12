@@ -1,13 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: my-angular-project/  
+  - source: dist/my-angular-project/
     destination: /var/www/my-angular-project
 permissions:
   - object: /var/www/my-angular-project
-    owner: nginx  
-    group: nginx  
+    pattern: '**'
     mode: '0755'
+    owner: root
+    group: root
+    type: 
+      - file
+      - directory
 hooks:
   BeforeInstall:
     - location: deploy-scripts/before-install.sh
