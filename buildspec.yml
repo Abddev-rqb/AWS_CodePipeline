@@ -4,23 +4,17 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "Installing dependencies..."
       - npm install -g @angular/cli@17
       - npm install  
-  pre_build:
-    commands:
-      - echo "Verifying Angular CLI..."
-      - ng version
   build:
     commands:
-      - echo "Building Angular project..."
       - ng build --configuration production
-      - ls -l dist/my-angular-project  
+      # Debugging command:
+      - find dist -type f | xargs ls -la
 artifacts:
-  base-directory: dist/my-angular-project
+  base-directory: dist  # 👈 Changed from dist/my-angular-project
   files:
-    - '**/*'
+    - 'my-angular-project/**/*'  # 👈 Now relative to dist
+    - appspec.yml
+    - 'deploy-scripts/**/*'
   discard-paths: no
-cache:
-  paths:
-    - node_modules/**/*  
