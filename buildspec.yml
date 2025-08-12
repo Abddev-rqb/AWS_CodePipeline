@@ -5,8 +5,8 @@ phases:
       nodejs: 20
     commands:
       - echo "Installing dependencies..."
-      - npm install -g @angular/cli@17
-      - npm install  
+      - npm install
+      - npm install -g @angular/cli@17  
   pre_build:
     commands:
       - ng version
