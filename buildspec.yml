@@ -15,6 +15,7 @@ phases:
     commands:
       - echo "Building Angular project..."
       - ng build --configuration production
+      - ls -l dist/my-angular-project  
 artifacts:
   base-directory: dist/my-angular-project
   files:
